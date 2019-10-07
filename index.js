@@ -1,7 +1,9 @@
 const URL = 'https://ghibliapi.herokuapp.com/species';
 const selection = document.querySelector('#selection');
 const content = document.querySelector('#content');
+const button = document.querySelector('#butt');
 const globalResult = [];
+
 let properties = {
     gender: '',
     age: '',
@@ -23,7 +25,7 @@ const fillSelect = async (people) => {
     selection.appendChild(option);
 };
 
-const load = async () => {
+const onLoad = async () => {
     const data = await getData(URL);
     const result = data.find(obj => obj.name === 'Cat');
     result.people.forEach(people => {
@@ -31,7 +33,7 @@ const load = async () => {
     });
 };
 
-const select = () => {
+const onSelectClick = () => {
     let n = selection.options.selectedIndex;
     for (let key in properties) {
         properties[key] = globalResult[n][key];
@@ -47,8 +49,6 @@ const onSelectChange = () => {
     content.innerHTML = '';
 };
 
-let button = document.querySelector('#butt');
-button.addEventListener('click', select);
+button.addEventListener('click', onSelectClick);
 selection.addEventListener('change', onSelectChange);
-
-window.addEventListener('load', load);
+window.addEventListener('load', onLoad);
