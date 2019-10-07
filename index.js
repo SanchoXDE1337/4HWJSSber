@@ -1,5 +1,6 @@
 const URL = 'https://ghibliapi.herokuapp.com/species';
 const selection = document.querySelector('#selection');
+const selection2 = document.querySelector('#selection2');
 const content = document.querySelector('#content');
 const button = document.querySelector('#butt');
 const globalResult = [];
@@ -22,19 +23,38 @@ const fillSelect = async (people) => {
     globalResult.push(data);
     const name = data.name;
     let option = new Option(name, name);
-    selection.appendChild(option);
+    selection2.appendChild(option);
 };
 
 const onLoad = async () => {
+    selection2.innerHTML = '';
     const data = await getData(URL);
-    const result = data.find(obj => obj.name === 'Cat');
+    data.forEach(obj => {
+        const name = obj.name;
+        let option = new Option(name, name);
+        selection.appendChild(option);
+    });
+    let n = selection.options.selectedIndex;
+    let result = data[n].people;
+    result.forEach(people => {
+        fillSelect(people);
+    })
+};
+
+
+
+
+/*const onLoad = async (name) => {
+    const data = await getData(URL);
+    const result = data.find(obj => obj.name === name);
     result.people.forEach(people => {
         fillSelect(people);
     });
-};
+};*/
+
 
 const onSelectClick = () => {
-    let n = selection.options.selectedIndex;
+    let n = selection2.options.selectedIndex;
     for (let key in properties) {
         properties[key] = globalResult[n][key];
         let p = document.createElement('p');
@@ -50,5 +70,6 @@ const onSelectChange = () => {
 };
 
 button.addEventListener('click', onSelectClick);
-selection.addEventListener('change', onSelectChange);
+selection.addEventListener('change', onLoad);
+selection2.addEventListener('change', onSelectChange);
 window.addEventListener('load', onLoad);
