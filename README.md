@@ -1,0 +1,1 @@
+## :sparkles: Ghibli [API](https://taniarascia.github.io/sandbox/ghibli/logo.png) :sparkles:
