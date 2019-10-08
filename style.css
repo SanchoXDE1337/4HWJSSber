@@ -1,3 +1,7 @@
+body {
+  background-color: antiquewhite;
+}
+
 .container {
   font-family: "AvenirNext", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.625;
@@ -12,9 +16,12 @@
 }
 .container div select {
   margin-top: 1em;
+  border: #cc195d dashed 0.2em;
+  color: #33475b;
+  background-color: rgba(25, 204, 136, 0.75);
   box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2);
   width: 30vw;
-  height: 4vh;
+  height: 6vh;
   font-size: 1.3rem;
 }
 
