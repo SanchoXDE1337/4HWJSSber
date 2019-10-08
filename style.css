@@ -1,0 +1,77 @@
+.container {
+  font-family: "AvenirNext", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.625;
+  color: #33475b;
+  display: flex;
+  width: 90vw;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container div select {
+  margin-top: 1em;
+  box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2);
+  width: 30vw;
+  height: 4vh;
+  font-size: 1.3rem;
+}
+
+#content {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  padding: 10px;
+  width: 40vw;
+  height: 5vh;
+  background-color: rgba(25, 204, 136, 0.75);
+  border-radius: 2em;
+  border: #cc195d dashed 0.35em;
+  transition: height 0.3s ease-in-out;
+}
+
+.active {
+  height: 30vh !important;
+}
+
+button {
+  box-shadow: 0 4px #f3002e;
+  margin-top: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  background-color: #ff5a79;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16.5px;
+  font-weight: 600;
+  padding: 0.75em 1em;
+}
+
+button:hover {
+  box-shadow: 0 1px #f3002e;
+  transition-duration: 0.3s;
+  transform: translateY(4px);
+}
+
+@media only screen and (max-width: 1400px) {
+  .container div select {
+    width: 50vw;
+  }
+
+  #content {
+    width: 50vw;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #content {
+    font-size: 1.2rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
