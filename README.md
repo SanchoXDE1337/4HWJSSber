@@ -1,1 +1,1 @@
-## :sparkles: Ghibli [API](https://sanchoxde1337.github.io/4HWJSSber/) :sparkles:
+## :sparkles: Ghibli [API](https://sanchoxde1337.github.io/GhibliAPI/) :sparkles:
